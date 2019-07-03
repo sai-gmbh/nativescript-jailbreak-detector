@@ -1,40 +1,88 @@
-# Your Plugin Name
+# NativeScript-Jailbreak-Detector
+A Nativescript plugin that makes detection of root and jailbreak hassle free. 
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+## Contributors
 
-Then describe what's the purpose of your plugin. 
+[RootBeer](https://github.com/scottyab/rootbeer)
 
-In case you develop UI plugin, this is where you can add some screenshots.
+[DTTJailbreakDetection](https://github.com/thii/DTTJailbreakDetection)
 
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+## Supported Platforms
+- iOS
+- Android
 
 ## Installation
-
-Describe your plugin installation steps. Ideally it would be something like:
-
-```javascript
-tns plugin add <your-plugin-name>
+```bash
+tns plugin add nativescript-jailbreak-detector
 ```
 
-## Usage 
+### iOS
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+Does not need any configuration.
 
-## API
+### Android
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
+Does not need any configuration.
 
-Apache License Version 2.0, January 2004
+## Usage
+### Typescript
+
+```typescript
+import { JailbreakDetector } from 'nativescript-jailbreak-detector';
+if (new JailbreakDetector().isRooted()) {
+   // Logic here
+ }
+```
+
+### iOS
+
+`JailbreakDetector` contains `isJailBroken()` method for IOS.
+
+```typescript
+import { JailbreakDetector } from 'nativescript-jailbreak-detector';import {isIOS} from "tns-core-modules/platform";
+import {isIOS} from "tns-core-modules/platform";
+
+if (isIOS && new JailbreakDetector().isJailBroken()) {
+  // Logic here
+}
+```
+
+`Note: isRooted() will call isJailBroken() internally for IOS devices
+so there is no need to check for platform before using isRooted() even on IOS.`
+
+### Android
+
+This plugin uses rootbeer package to find out is the device is rooted or not.
+ Hence it exposes all the other helper methods too. 
+```typescript
+import { JailbreakDetector } from 'nativescript-jailbreak-detector';
+const jailDetector = new JailbreakDetector();
+
+// All the available methods
+jailDetector.isRooted();
+jailDetector.checkForBusyBoxBinary();
+jailDetector.checkForDangerousProps();
+jailDetector.checkForMagiskBinary();
+jailDetector.checkForRootNative();
+jailDetector.checkForRWPaths();
+jailDetector.checkForSuBinary();
+jailDetector.checkSuExists();
+jailDetector.detectPotentiallyDangerousApps();
+jailDetector.detectRootCloakingApps();
+jailDetector.detectRootManagementApps();
+jailDetector.detectTestKeys();
+jailDetector.isRootedOrBusyboxInstalled();
+jailDetector.isSelinuxFlagInEnabled();
+```
+
+## Demo
+```bash
+# install required dependencies for demo and 
+cd src && npm run postclone
+# iOS
+npm run demo.ios
+# Android
+npm run demo.android
+```
+
+
