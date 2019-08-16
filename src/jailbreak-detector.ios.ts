@@ -67,6 +67,6 @@ export class JailbreakDetector extends Common implements JailBreakDetectorAPI {
 
   isJailBroken(): boolean {
     // @ts-ignore
-    return DTTJailbreakDetection.isJailbroken;
+    return DTTJailbreakDetection.isJailbroken();
   }
 }
