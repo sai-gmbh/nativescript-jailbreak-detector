@@ -1,4 +1,15 @@
 # NativeScript-Jailbreak-Detector
+
+
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![TotalDownloads][total-downloads-image]][npm-url]
+
+[npm-image]:https://img.shields.io/npm/v/nativescript-jailbreak-detector.svg
+[npm-url]:https://www.npmjs.com/package/nativescript-jailbreak-detector
+[downloads-image]:http://img.shields.io/npm/dm/nativescript-jailbreak-detector.svg
+[total-downloads-image]:http://img.shields.io/npm/dt/nativescript-jailbreak-detector.svg?label=total%20downloads
+
 A Nativescript plugin that makes detection of root and jailbreak hassle free. 
 
 ## Contributors

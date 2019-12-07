@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-jailbreak-detector",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "This plugin checks for root in android devices as well as for jailbreak in IOS devices",
 	"main": "jailbreak-detector",
 	"typings": "index.d.ts",
@@ -23,8 +23,8 @@
 		"plugin.tscwatch": "npm run tsc -- -w",
 		"ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
 		"prepack": "npm run build.native",
-		"demo.ios": "npm run tsc && cd ../demo-angular && tns run ios --emulator",
-		"demo.android": "npm run tsc && cd ../demo-angular && tns run android --emlator",
+		"demo.ios": "npm run tsc && cd ../demo-angular && tns run ios --bundle --emulator",
+		"demo.android": "npm run tsc && cd ../demo-angular && tns run android --bundle --emulator",
 		"demo.reset": "cd ../demo-angular && npx rimraf -- hooks node_modules platforms package-lock.json",
 		"plugin.prepare": "npm run build &&  cd ../demo-angular && tns plugin remove nativescript-jailbreak-detector && tns plugin add ../src",
 		"clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i"
